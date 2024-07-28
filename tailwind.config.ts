@@ -6,17 +6,31 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+
   theme: {
-    container: {
-      center: true,
-      padding: "30px",
-      screens: {
-        sm: "360px",
-        md: "768px",
-        lg: "1440px",
+    extend: {
+      borderColor: {
+        primary: "#EC3F3FCC",
+      },
+
+      boxShadow: {
+        button: "0px 2px 24px 0px #FF1E1E80",
+      },
+
+      backgroundColor: {
+        primary: "#FF1E1E",
+      },
+
+      container: {
+        center: true,
+        padding: "20px",
+
+        screens: {
+          sm: "640px",
+          md: "1200px",
+        },
       },
     },
-    extend: {},
   },
   plugins: [],
 };
