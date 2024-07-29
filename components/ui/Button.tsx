@@ -1,26 +1,26 @@
 import { AppRoutes } from "@/lib/constants";
-import { InputVariantTypes } from "@/lib/models";
+import { ButtonVariantTypes } from "@/lib/models";
 import Link from "next/link";
 import { FC } from "react";
 
 interface ButtonProps {
   children: string;
-  variant?: InputVariantTypes;
-  href: AppRoutes;
+  variant?: ButtonVariantTypes;
+  href?: AppRoutes;
+  className?: string;
 }
 
-const returnStylesByType = (type: InputVariantTypes): string => {
+const returnStylesByType = (type: ButtonVariantTypes): string => {
   let generalStyles = "text-white font-bold text-[16px] ";
 
   switch (type) {
-    case InputVariantTypes.contained:
-      generalStyles += "border-red-200";
-      break;
-
-    case InputVariantTypes.outlined:
+    case ButtonVariantTypes.contained:
       generalStyles +=
-        "border border-primary px-4 py-3 bg-primary/10 hover:bg-primary hover:shadow-button md:px-8";
-
+        "px-4 py-3 bg-primary hover:bg-primary-hover hover:shadow-button md:px-8";
+      break;
+    case ButtonVariantTypes.outlined:
+      generalStyles +=
+        "border border-primary px-4 py-3 bg-primary/10 hover:bg-primary-hover hover:shadow-button md:px-8";
       break;
     default:
       break;
@@ -32,16 +32,19 @@ const returnStylesByType = (type: InputVariantTypes): string => {
 const Button: FC<ButtonProps> = (props) => {
   const {
     children,
-    variant = InputVariantTypes.contained,
+    variant = ButtonVariantTypes.contained,
     href = AppRoutes.BLANK,
+    className = "",
   } = props;
 
   return href ? (
-    <Link href={href}>
+    <Link href={href} className={className}>
       <button className={returnStylesByType(variant)}>{children}</button>
     </Link>
   ) : (
-    <button className={returnStylesByType(variant)}>{children}</button>
+    <button className={`${returnStylesByType(variant)} ${className}`}>
+      {children}
+    </button>
   );
 };
 

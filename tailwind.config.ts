@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       borderColor: {
-        primary: "#EC3F3FCC",
+        primary: "#C63838",
       },
 
       boxShadow: {
@@ -18,7 +18,8 @@ const config: Config = {
       },
 
       backgroundColor: {
-        primary: "#FF1E1E",
+        primary: "#EC3F3F",
+        "primary-hover": "#FF1E1E",
       },
 
       container: {

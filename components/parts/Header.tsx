@@ -1,9 +1,9 @@
 import { AppRoutes } from "@/lib/constants";
-import { InputVariantTypes } from "@/lib/models";
+import { ButtonVariantTypes } from "@/lib/models";
 import Image from "next/image";
+import Link from "next/link";
 import { FC } from "react";
 import Button from "../ui/Button";
-import Link from "next/link";
 
 const Header: FC = () => {
   return (
@@ -21,7 +21,7 @@ const Header: FC = () => {
           />
         </Link>
 
-        <Button href={AppRoutes.REQUEST} variant={InputVariantTypes.outlined}>
+        <Button href={AppRoutes.REQUEST} variant={ButtonVariantTypes.outlined}>
           Подключить подписку
         </Button>
       </div>

@@ -8,7 +8,7 @@ import { Header } from "@/components/parts";
 const futuraFont = localFont({
   src: [
     {
-      path: "../public/fonts/FuturaCyrillicBold.ttf",
+      path: "../public/fonts/FuturaCyrillicDemi.ttf",
       weight: "600",
       style: "normal",
     },
