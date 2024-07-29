@@ -13,6 +13,14 @@ const config: Config = {
         primary: "#C63838",
       },
 
+      color: {
+        primary: "#EC3F3F",
+      },
+
+      textColor: {
+        primary: "#EC3F3F",
+      },
+
       boxShadow: {
         button: "0px 2px 24px 0px #FF1E1E80",
       },

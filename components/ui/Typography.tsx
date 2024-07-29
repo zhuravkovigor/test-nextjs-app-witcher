@@ -27,15 +27,27 @@ const Typography: FC<TypographyProps> = (props) => {
       );
     case TypographyVariantTypes.H2:
       return (
-        <h2 className={`${fontWeight} text-[56px] ${className}`}>{children}</h2>
+        <h2
+          className={`${fontWeight} text-[28px] md:text-[32px] lg:text-[40px] ${className}`}
+        >
+          {children}
+        </h2>
       );
     case TypographyVariantTypes.H3:
       return (
-        <h3 className={`${fontWeight} text-[56px] ${className}`}>{children}</h3>
+        <h3
+          className={`${fontWeight} text-[36px] md:text-[32px] lg:text-[40px] ${className}`}
+        >
+          {children}
+        </h3>
       );
     case TypographyVariantTypes.H4:
       return (
-        <h4 className={`${fontWeight} text-[56px] ${className}`}>{children}</h4>
+        <h4
+          className={`${fontWeight} text-[16px] md:text-[20px] lg:text-[24px] ${className}`}
+        >
+          {children}
+        </h4>
       );
     case TypographyVariantTypes.H5:
       return (

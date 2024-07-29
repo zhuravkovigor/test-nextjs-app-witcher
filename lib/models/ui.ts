@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 export enum ButtonVariantTypes {
   outlined = "outlined",
   contained = "contained",
@@ -17,4 +19,21 @@ export enum TypographyFontWeight {
   BOLD = "font-bold",
   MEDIUM = "font-medium",
   REGULAR = "",
+}
+
+export interface ICarouselItem {
+  key: string;
+  Element: ReactNode;
+}
+
+export interface ICarouselCard {
+  title: string;
+  actor: string;
+  description: string;
+  image: string;
+}
+
+export interface IIcon {
+  className?: string;
+  onClick?: () => void;
 }

@@ -6,7 +6,7 @@ import Typography from "../ui/Typography";
 
 const Hero: FC = () => {
   return (
-    <section className="relative h-[353px] md:h-[360px] lg:h-[440px]">
+    <section className="overflow-hidden relative h-[353px] md:h-[360px] lg:h-[440px]">
       <Image
         layout="fill"
         objectFit="cover"
