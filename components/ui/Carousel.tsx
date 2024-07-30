@@ -86,7 +86,7 @@ const Carousel: FC<CarouselProps> = (props) => {
   const percentageOfCarousel = percentage(activeStep, countOfSteps);
 
   return (
-    <div className={`container ${className}`}>
+    <div className={`container ${className} h-[450px] lg:h-[600px]`}>
       <div className="flex mt-12 justify-between items-center text-white">
         <Typography
           fontWeight={TypographyFontWeight.BOLD}

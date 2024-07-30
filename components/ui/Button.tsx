@@ -8,6 +8,7 @@ interface ButtonProps {
   variant?: ButtonVariantTypes;
   href?: AppRoutes;
   className?: string;
+  onClick?: () => void;
 }
 
 const returnStylesByType = (type: ButtonVariantTypes): string => {
@@ -35,6 +36,7 @@ const Button: FC<ButtonProps> = (props) => {
     variant = ButtonVariantTypes.contained,
     href = AppRoutes.BLANK,
     className = "",
+    onClick,
   } = props;
 
   return href ? (
@@ -42,7 +44,10 @@ const Button: FC<ButtonProps> = (props) => {
       <button className={returnStylesByType(variant)}>{children}</button>
     </Link>
   ) : (
-    <button className={`${returnStylesByType(variant)} ${className}`}>
+    <button
+      onClick={onClick}
+      className={`${returnStylesByType(variant)} ${className}`}
+    >
       {children}
     </button>
   );
