@@ -7,3 +7,22 @@ body {
   overflow-x: hidden;
   max-width: 100%;
 }
+
+.ymaps-layers-pane {
+  filter: grayscale(1);
+  opacity: 0 !important;
+}
+
+.ymaps-2-1-79-image {
+  filter: grayscale(0);
+}
+
+.ymaps-2-1-79-ground-pane {
+  filter: grayscale(1);
+}
+
+.ymaps-2-1-79-copyright__link,
+.ymaps-2-1-79-copyright__text,
+.ymaps-2-1-79-map-copyrights-promo {
+  display: none;
+}

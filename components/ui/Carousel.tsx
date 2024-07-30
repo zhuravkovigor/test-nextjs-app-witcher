@@ -8,6 +8,7 @@ import {
 import { useState, type FC } from "react";
 
 import ArrowLeftIcon from "@/lib/assets/ArrowLeft";
+import { PageSizes } from "@/lib/constants/page";
 import { percentage } from "@/lib/utils/math";
 import { motion } from "framer-motion";
 import { useWindowSize } from "usehooks-ts";
@@ -25,21 +26,15 @@ enum StepSizes {
   TABLET = 260,
 }
 
-enum PageWidth {
-  DESKTOP = 1440,
-  TABLET = 768,
-  MOBILE = 360,
-}
-
 const returnCountOfStepsByWindowWidth = (
   width: number,
   countOfItems: number
 ) => {
-  if (width >= PageWidth.DESKTOP) {
+  if (width >= PageSizes.DESKTOP) {
     return countOfItems % 4;
   }
 
-  if (width >= PageWidth.TABLET) {
+  if (width >= PageSizes.TABLET) {
     return countOfItems - 2;
   }
 
@@ -47,11 +42,11 @@ const returnCountOfStepsByWindowWidth = (
 };
 
 const returnStepSizesByPageWidth = (width: number) => {
-  if (width >= PageWidth.DESKTOP) {
+  if (width >= PageSizes.DESKTOP) {
     return StepSizes.DESKTOP;
   }
 
-  if (width >= PageWidth.TABLET) {
+  if (width >= PageSizes.TABLET) {
     return StepSizes.TABLET;
   }
 
