@@ -4,6 +4,7 @@ import StoreProvider from "./StoreProvider";
 import "./globals.css";
 
 import { Header } from "@/components/parts";
+import DataCollection from "@/components/parts/DataCollection";
 import Footer from "@/components/parts/Footer";
 
 const futuraFont = localFont({
@@ -36,9 +37,13 @@ export default function RootLayout({
       <body className={futuraFont.className}>
         <Header />
 
-        <StoreProvider>{children}</StoreProvider>
+        <StoreProvider>
+          <DataCollection />
 
-        <Footer />
+          {children}
+
+          <Footer />
+        </StoreProvider>
       </body>
     </html>
   );

@@ -1,9 +1,8 @@
 import { AppRoutes } from "@/lib/constants";
-import { TypographyVariantTypes } from "@/lib/models";
 import Image from "next/image";
 import Link from "next/link";
-import Typography from "../ui/Typography";
 import Media from "./Media";
+import ButtonOpenDataCollection from "./ButtonOpenDataCollection";
 
 const Footer = () => {
   return (
@@ -20,14 +19,7 @@ const Footer = () => {
             objectFit="cover"
           />
         </Link>
-        <div className="order-3 md:order-2">
-          <Typography
-            className="md:max-w-[200px] text-center"
-            variant={TypographyVariantTypes.LINK}
-          >
-            Политика обработки персональных данных
-          </Typography>
-        </div>
+        <ButtonOpenDataCollection />
 
         <Media className="gap-4 order-2 md:order-3" />
       </div>

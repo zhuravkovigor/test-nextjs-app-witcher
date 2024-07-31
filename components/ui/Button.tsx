@@ -19,7 +19,7 @@ const returnStylesByType = (
   type: ButtonVariantTypes,
   extraClassName?: string
 ): string => {
-  let generalStyles = `text-white flex items-center gap-4 font-bold text-[16px] ${extraClassName}  `;
+  let generalStyles = `text-white flex items-center gap-4 font-bold text-[16px] ${extraClassName} `;
 
   switch (type) {
     case ButtonVariantTypes.contained:

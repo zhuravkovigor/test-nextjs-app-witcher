@@ -1,8 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
+import dataSlice from "./slices/data";
 
 export const makeStore = () => {
   return configureStore({
-    reducer: {},
+    reducer: {
+      modal: dataSlice.reducer,
+    },
   });
 };
 

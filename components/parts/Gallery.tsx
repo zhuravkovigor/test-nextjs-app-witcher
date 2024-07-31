@@ -92,7 +92,7 @@ const Gallery: FC = () => {
 
       <Button
         onClick={handleLoadImages}
-        className="w-full mt-6"
+        className="mt-6 flex justify-center text-center w-full"
         variant={ButtonVariantTypes.outlined}
       >
         Показать еще
