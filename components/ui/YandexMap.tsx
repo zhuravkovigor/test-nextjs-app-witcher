@@ -32,7 +32,7 @@ const returnMapHeightByWindowWidth = (width: number) => {
 };
 
 const YandexMap: FC<MapProps> = (props) => {
-  const { width = 1440 } = useWindowSize();
+  const { width = PageSizes.DESKTOP } = useWindowSize();
 
   return (
     <div className="mt-20 text-white">

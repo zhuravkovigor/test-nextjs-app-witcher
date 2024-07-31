@@ -1,13 +1,22 @@
+"use client";
+
 import { AppRoutes } from "@/lib/constants";
 import { ButtonVariantTypes } from "@/lib/models";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FC } from "react";
 import Button from "../ui/Button";
 
 const Header: FC = () => {
+  const pathname = usePathname();
+
+  const isHomePage = pathname === AppRoutes.HOME;
+
+  const headerBackground = isHomePage ? "bg-black" : "bg-contact-page";
+
   return (
-    <header className="bg-black">
+    <header className={headerBackground}>
       <div className="container h-[88px] gap-2 flex items-center justify-between">
         <Link
           href={AppRoutes.HOME}
@@ -21,9 +30,14 @@ const Header: FC = () => {
           />
         </Link>
 
-        <Button href={AppRoutes.REQUEST} variant={ButtonVariantTypes.outlined}>
-          Подключить подписку
-        </Button>
+        {isHomePage && (
+          <Button
+            href={AppRoutes.CONTACT}
+            variant={ButtonVariantTypes.outlined}
+          >
+            Подключить подписку
+          </Button>
+        )}
       </div>
     </header>
   );

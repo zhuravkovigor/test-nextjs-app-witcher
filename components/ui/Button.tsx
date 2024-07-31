@@ -1,7 +1,8 @@
 import { AppRoutes } from "@/lib/constants";
-import { ButtonVariantTypes } from "@/lib/models";
+import { ButtonTypes, ButtonVariantTypes } from "@/lib/models";
 import Link from "next/link";
 import { FC } from "react";
+import Loader from "./Loader";
 
 interface ButtonProps {
   children: string;
@@ -9,10 +10,16 @@ interface ButtonProps {
   href?: AppRoutes;
   className?: string;
   onClick?: () => void;
+  type?: ButtonTypes;
+  extraClassNameType?: string;
+  isLoading?: boolean;
 }
 
-const returnStylesByType = (type: ButtonVariantTypes): string => {
-  let generalStyles = "text-white font-bold text-[16px] ";
+const returnStylesByType = (
+  type: ButtonVariantTypes,
+  extraClassName?: string
+): string => {
+  let generalStyles = `text-white flex items-center gap-4 font-bold text-[16px] ${extraClassName}  `;
 
   switch (type) {
     case ButtonVariantTypes.contained:
@@ -36,18 +43,25 @@ const Button: FC<ButtonProps> = (props) => {
     variant = ButtonVariantTypes.contained,
     href = AppRoutes.BLANK,
     className = "",
+    extraClassNameType = "",
     onClick,
+    isLoading = false,
+    type = ButtonTypes.BUTTON,
   } = props;
 
   return href ? (
     <Link href={href} className={className}>
-      <button className={returnStylesByType(variant)}>{children}</button>
+      <button className={returnStylesByType(variant, extraClassNameType)}>
+        {children}
+      </button>
     </Link>
   ) : (
     <button
+      type={type}
       onClick={onClick}
       className={`${returnStylesByType(variant)} ${className}`}
     >
+      {isLoading && <Loader />}
       {children}
     </button>
   );

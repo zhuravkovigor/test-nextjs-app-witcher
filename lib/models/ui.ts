@@ -13,6 +13,12 @@ export enum TypographyVariantTypes {
   H5 = "h5",
   H6 = "h6",
   P = "p",
+  LINK = "link",
+}
+
+export enum ButtonTypes {
+  BUTTON = "button",
+  SUBMIT = "submit",
 }
 
 export enum TypographyFontWeight {
@@ -36,4 +42,9 @@ export interface ICarouselCard {
 export interface IIcon {
   className?: string;
   onClick?: () => void;
+}
+
+export interface ISelectOption {
+  label: string;
+  value: string;
 }

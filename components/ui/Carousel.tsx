@@ -56,7 +56,7 @@ const returnStepSizesByPageWidth = (width: number) => {
 const Carousel: FC<CarouselProps> = (props) => {
   const { items, className = "", title = "" } = props;
 
-  const { width = 1440 } = useWindowSize();
+  const { width = PageSizes.DESKTOP } = useWindowSize();
 
   const [xAxis, setXAxis] = useState(0);
   const [activeStep, setActiveStep] = useState(0);

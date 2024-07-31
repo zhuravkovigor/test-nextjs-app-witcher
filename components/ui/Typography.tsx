@@ -57,6 +57,12 @@ const Typography: FC<TypographyProps> = (props) => {
       return (
         <h6 className={`${fontWeight} text-[56px] ${className}`}>{children}</h6>
       );
+    case TypographyVariantTypes.LINK:
+      return (
+        <p className={`text-[14px] cursor-pointer underline ${className}`}>
+          {children}
+        </p>
+      );
     case TypographyVariantTypes.P:
     default:
       return (

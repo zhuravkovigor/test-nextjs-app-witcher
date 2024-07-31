@@ -28,6 +28,10 @@ const config: Config = {
       backgroundColor: {
         primary: "#EC3F3F",
         "primary-hover": "#FF1E1E",
+        footer: "#343338",
+        "contact-page": "#181818",
+        input: "#2F2F2F",
+        "error-input": "#EC3F3F33",
       },
 
       container: {
