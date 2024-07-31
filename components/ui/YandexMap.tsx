@@ -12,14 +12,14 @@ import Typography from "./Typography";
 interface MapProps {}
 
 const mapState = {
-  center: [55.751574, 37.573856], // Координаты центра карты
-  zoom: 10,
+  center: [55.7539, 37.6208], // Координаты центра карты
+  zoom: 13,
 };
 
 const placemarkOptions = {
   iconLayout: "default#image", // Указываем, что будем использовать изображение
   iconImageHref: "./placemark.svg", // Путь к вашему изображению
-  iconImageSize: [80, 80], // Размер изображения (ширина, высота)
+  iconImageSize: [90, 90], // Размер изображения (ширина, высота)
   iconImageOffset: [-15, -15], // Смещение изображения (по X и Y)
 };
 
@@ -57,6 +57,26 @@ const YandexMap: FC<MapProps> = (props) => {
           >
             <Placemark
               geometry={[55.751574, 37.573856]}
+              options={placemarkOptions}
+            />
+
+            <Placemark
+              geometry={[55.7345, 37.601]}
+              options={placemarkOptions}
+            />
+
+            <Placemark
+              geometry={[55.752, 37.6175]}
+              options={placemarkOptions}
+            />
+
+            <Placemark
+              geometry={[55.7033, 37.5505]}
+              options={placemarkOptions}
+            />
+
+            <Placemark
+              geometry={[55.738, 37.6205]}
               options={placemarkOptions}
             />
           </Map>
